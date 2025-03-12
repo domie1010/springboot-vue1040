@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.ShifeiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.ShifeiEntity" id="shifeiMap">
+        <result property="guoshumingcheng" column="guoshumingcheng"/>
+        <result property="guoshutupian" column="guoshutupian"/>
+        <result property="shifei" column="shifei"/>
+        <result property="shifeishijian" column="shifeishijian"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.ShifeiVO" >
+		SELECT * FROM shifei  shifei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.ShifeiVO" >
+		SELECT  shifei.* FROM shifei  shifei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.ShifeiView" >
+
+		SELECT  shifei.* FROM shifei  shifei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.ShifeiView" >
+		SELECT * FROM shifei  shifei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+
+</mapper>
